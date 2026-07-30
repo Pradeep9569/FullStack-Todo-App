@@ -15,7 +15,7 @@ function Home() {
     const fetchtodos = async() => {
         try {
             setLoading(true)
-            const response = await axios.get("http://localhost:3001/todo/fetch" , {
+            const response = await axios.get("https://fullstack-todo-app-ftjs.onrender.com/todo/fetch" , {
 
               withCredentials:true,
 
@@ -42,7 +42,7 @@ function Home() {
  const todoCreate = async() => {
   if(!newTodo) return;
   try {
-    const response = await axios.post("http://localhost:3001/todo/create" ,{
+    const response = await axios.post("https://fullstack-todo-app-ftjs.onrender.com/todo/create" ,{
      
       text:newTodo,
       completed:false
@@ -91,7 +91,7 @@ const todoStatus = async (id) => {
 
  const todoDelete = async (id) => {
   try {
-   await axios.delete(`http://localhost:3001/todo/delete/${id}`, {withCredentials:true})
+   await axios.delete(`https://fullstack-todo-app-ftjs.onrender.com/todo/delete/${id}`, {withCredentials:true})
    setTodos(todos.filter((t) => t._id!== id))
 
   } catch (error) {
@@ -104,7 +104,7 @@ const todoStatus = async (id) => {
   const navigateTo =  useNavigate();
   const logout = async () => {
     try {
-      await axios.get("http://localhost:3001/user/logout", {
+      await axios.get("https://fullstack-todo-app-ftjs.onrender.com/user/logout", {
         withCredentials: true,
       });
       toast.success("User logged out successfully");
