@@ -68,7 +68,7 @@ const todoStatus = async (id) => {
 
   try {
     const response = await axios.put(
-      `http://localhost:3001/todo/update/${id}`,
+      `https://fullstack-todo-app-ftjs.onrender.com/todo/update/${id}`,
       {
         ...todo,
         completed: !todo.completed,
